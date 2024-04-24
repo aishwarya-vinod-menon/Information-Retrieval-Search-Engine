@@ -8,10 +8,10 @@ This project aims to provide a basic search engine functionality for finding ski
 
 ## Technologies used
 
- **Apache Nutch**: For web crawling and fetching skiing-related content.
- **Apache Solr**: For indexing and searching the crawled content.
- **Python**: For backend processing and integration with Apache Solr.
- **HTML, CSS, JavaScript**: For the basic user interface.
+- **Apache Nutch**: For web crawling and fetching skiing-related content.
+- **Apache Solr**: For indexing and searching the crawled content.
+-**Python**: For backend processing and integration with Apache Solr.
+-**HTML, CSS, JavaScript**: For the basic user interface.
 
 
  ## Setup and Overview
