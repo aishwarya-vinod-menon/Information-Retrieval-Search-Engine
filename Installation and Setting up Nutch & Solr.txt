@@ -92,7 +92,7 @@ source ~/.bashrc
   - Download the schema.xml file from the Apache Nutch GitHub repository
     Command: wget https://raw.githubusercontent.com/apache/nutch/master/src/plugin/indexer-solr/schema.xml
 
-#######################################################################################
+
 
 # Next Steps:
 
