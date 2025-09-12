@@ -63,6 +63,7 @@ This project was developed using **Windows Subsystem for Linux (WSL)** to run Ap
 
 ## 📂 Project Structure
 
+```
 ski-search-engine/
 ├── crawler/ # Apache Nutch configs and crawl scripts
 │ ├── seeds/ # Seed URLs for skiing-related sites
@@ -84,4 +85,4 @@ ski-search-engine/
 │
 ├── README.md # Project documentation
 └── requirements.txt # Python dependencies (if applicable)
-
+```
