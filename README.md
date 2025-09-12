@@ -63,7 +63,25 @@ This project was developed using **Windows Subsystem for Linux (WSL)** to run Ap
 
 ## 📂 Project Structure
 
-<pre>``` ski-search-engine/ ├── crawler/ # Apache Nutch configs and crawl scripts │ ├── seeds/ # Seed URLs for skiing-related sites │ ├── nutch-site.xml # Nutch configuration file │ └── crawl.sh # Shell script to run the crawler │ ├── indexer/ # Apache Solr schema and indexing logic │ ├── schema.xml # Solr schema definition │ └── index.sh # Script to push crawled data to Solr │ ├── backend/ # Python backend for Solr integration │ ├── app.py # Flask or custom Python server │ └── solr_client.py # Solr query and response handling │ ├── frontend/ # User interface files │ ├── index.html # Main search page │ ├── styles.css # Basic styling │ └── script.js # Search logic and UI interaction │ ├── README.md # Project documentation └── requirements.txt # Python dependencies (if applicable) ```</pre>
-
-
+ski-search-engine/
+├── crawler/ # Apache Nutch configs and crawl scripts
+│ ├── seeds/ # Seed URLs for skiing-related sites
+│ ├── nutch-site.xml # Nutch configuration file
+│ └── crawl.sh # Shell script to run the crawler
+│
+├── indexer/ # Apache Solr schema and indexing logic
+│ ├── schema.xml # Solr schema definition
+│ └── index.sh # Script to push crawled data to Solr
+│
+├── backend/ # Python backend for Solr integration
+│ ├── app.py # Flask or custom Python server
+│ └── solr_client.py # Solr query and response handling
+│
+├── frontend/ # User interface files
+│ ├── index.html # Main search page
+│ ├── styles.css # Basic styling
+│ └── script.js # Search logic and UI interaction
+│
+├── README.md # Project documentation
+└── requirements.txt # Python dependencies (if applicable)
 
