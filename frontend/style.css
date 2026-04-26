@@ -1,0 +1,12 @@
+body { font-family: Arial, sans-serif; margin: 0; background: #f4f4f4; }
+.container { max-width: 900px; margin: 0 auto; padding: 1rem; }
+h1 { margin-bottom: 0.25rem; }
+.subtitle { color: #444; }
+form { background: #fff; padding: 1rem; border-radius: 8px; }
+fieldset { border: 1px solid #ddd; margin: 0.75rem 0; }
+label { display: inline-block; margin: 0.2rem 0.5rem 0.2rem 0; }
+button { background: #007bff; color: #fff; border: 0; border-radius: 4px; padding: 0.6rem 1rem; }
+#results { margin-top: 1rem; display: grid; gap: 0.75rem; }
+.result-card { background: white; padding: 0.75rem; border-radius: 6px; }
+.result-card a { color: #0b57d0; word-break: break-all; }
+.error { color: #b00020; }

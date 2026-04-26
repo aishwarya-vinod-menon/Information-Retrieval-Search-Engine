@@ -1,88 +1,75 @@
+# Information Retrieval Search Engine (Academic Project)
 
-# 🎿 Ski Search Engine
+A cleaned-up, reproducible portfolio version of an academic IR system using:
 
-Welcome to the Ski Search Engine repository! This project provides a lightweight search engine tailored to skiing-related content, combining web crawling, indexing, and a simple user interface.
+- Apache Nutch for crawling
+- Apache Solr for indexing and retrieval
+- Flask backend API
+- JavaScript frontend
+- IR features: PageRank, HITS, query expansion, and clustering
 
----
+> This is **not** presented as production-ready software. It is a refactored course project for learning and demonstration.
 
-## 📌 Overview
+## Repository structure
 
-The Ski Search Engine is designed to:
-- Crawl skiing-related websites
-- Index the content for fast retrieval
-- Provide a user-friendly interface to search and explore skiing information
-
----
-
-## 🧰 Technologies Used
-
-| Tool | Purpose |
-|------|--------|
-| **Apache Nutch** | Web crawling and content fetching |
-| **Apache Solr** | Indexing and search functionality |
-| **Python** | Backend integration with Solr |
-| **HTML, CSS, JavaScript** | Frontend user interface |
-| **WSL (Windows Subsystem for Linux)** | Linux-based development environment on Windows |
-
----
-
-## ⚙️ Setup Instructions (WSL-Based)
-
-This project was developed using **Windows Subsystem for Linux (WSL)** to run Apache Nutch and Apache Solr in a Linux-like environment on Windows.
-
-### 🐧 Prerequisites
-- Windows 10/11 with WSL enabled  
-- A Linux distribution installed via WSL (e.g., Ubuntu)  
-- Java (OpenJDK 8 or 11) installed in WSL  
-- Python installed in WSL  
-- Apache Nutch and Apache Solr installed inside WSL
-
-### 🔧 Setup Steps
-
-1. **Install Apache Nutch and Solr in WSL**
-   - Follow official install guides for each tool inside your WSL terminal
-   - Ensure Solr is running on a port accessible from your browser (e.g., `localhost:8983`)
-
-2. **Run the Nutch Crawler**
-   - Configure seed URLs and crawl depth
-   - Execute crawl commands from WSL
-
-3. **Index with Solr**
-   - Use Nutch’s indexing scripts to push data to Solr
-   - Confirm indexed content via Solr’s admin UI
-
-4. **Python Backend**
-   - Run Python scripts from WSL to query Solr
-   - Use Flask or another lightweight framework if needed
-
-5. **Frontend Access**
-   - Open the HTML interface in your browser (served via Python or directly as static files)
-   - Enter a search query and view results
-
----
-
-## 📂 Project Structure
-
+```text
+app/
+  main.py
+  config.py
+  services/
+  utils/
+frontend/
+  index.html
+  script.js
+  style.css
+data/
+  processed/
+docs/
+archive/
+  legacy/
+requirements.txt
+.env.example
+.gitignore
+README.md
 ```
-ski-search-engine/
-├── crawler/ # Apache Nutch configs and crawl scripts
-│ ├── seeds/ # Seed URLs for skiing-related sites
-│ ├── nutch-site.xml # Nutch configuration file
-│ └── crawl.sh # Shell script to run the crawler
-│
-├── indexer/ # Apache Solr schema and indexing logic
-│ ├── schema.xml # Solr schema definition
-│ └── index.sh # Script to push crawled data to Solr
-│
-├── backend/ # Python backend for Solr integration
-│ ├── app.py # Flask or custom Python server
-│ └── solr_client.py # Solr query and response handling
-│
-├── frontend/ # User interface files
-│ ├── index.html # Main search page
-│ ├── styles.css # Basic styling
-│ └── script.js # Search logic and UI interaction
-│
-├── README.md # Project documentation
-└── requirements.txt # Python dependencies (if applicable)
+
+## Quick start
+
+1. Create virtual environment and install dependencies:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
 ```
+
+2. Configure environment:
+
+```bash
+cp .env.example .env
+```
+
+3. Ensure Solr is running locally with a populated `nutch` core:
+
+`http://localhost:8983/solr/nutch`
+
+4. Run backend API:
+
+```bash
+python -m app.main
+```
+
+5. Open `frontend/index.html` in your browser (or serve it with any static server).
+
+## Feature mapping
+
+- `page_rank` → rerank Solr results using precomputed PageRank scores.
+- `hits` → rerank Solr results using precomputed HITS scores.
+- `flat_clustering`, `single_hac`, `average_hac` → cluster-aware result ordering.
+- `association_qe`, `metric_qe`, `scalar_qe` → query expansion then retrieval.
+
+## Legacy materials
+
+Original scripts and files were preserved in `archive/legacy/` for traceability.
+
+See `docs/notes.md` for artifact expectations and runtime assumptions.

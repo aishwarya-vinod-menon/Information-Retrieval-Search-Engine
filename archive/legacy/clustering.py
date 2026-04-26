@@ -1,3 +1,4 @@
+from app.config import TFIDF_FILE, URL_CLUSTER_FLAT_FILE, URL_CLUSTER_SINGLE_FILE, URL_CLUSTER_AVG_FILE, CENTER_FLAT_FILE, CENTER_SINGLE_FILE, CENTER_AVG_FILE
 import pickle
 class Clustering:
     def __init__(self):
@@ -7,7 +8,7 @@ class Clustering:
         self.cluster_center_flat = {}
         self.cluster_center_single = {}
         self.cluster_center_average = {}
-        self.tfidf = pickle.load(open("C:/Users/admin/Desktop/new/IR Project/results/tfidfVec.pkl", "rb"))
+        self.tfidf = pickle.load(open(TFIDF_FILE, "rb"))
         self.read_URL_cluster_flat()
         self.read_cluster_center_flat()
         self.read_URL_cluster_average()
@@ -19,13 +20,13 @@ class Clustering:
         
     
     def read_URL_cluster_flat(self):
-        with open("C:/Users/admin/Desktop/new/IR Project/results/url_clusterNum_flat.txt", "r") as f:
+        with open(URL_CLUSTER_FLAT_FILE, "r", encoding="utf-8") as f:
             while line := f.readline():
                 url, cluster_num = line.strip().split(" ")
                 self.url_clusterNum_flat[url] = cluster_num
 
     def read_cluster_center_flat(self):
-        with open("C:/Users/admin/Desktop/new/IR Project/results/cluster_center_flat.txt", "r") as f:
+        with open(CENTER_FLAT_FILE, "r", encoding="utf-8") as f:
             while line := f.readline():
                 data = line.strip().split(" ")
                 center = int(data[0])
@@ -34,7 +35,7 @@ class Clustering:
                 self.cluster_center_flat[int(center)] = center_coordinate
     
     def read_cluster_center_average(self):
-        with open("C:/Users/admin/Desktop/new/IR Project/results/cluster_center_avg.txt", "r") as f:
+        with open(CENTER_AVG_FILE, "r", encoding="utf-8") as f:
             while line := f.readline():
                 data = line.strip().split(" ")
                 center = int(data[0])
@@ -43,13 +44,13 @@ class Clustering:
                 self.cluster_center_average[int(center)] = center_coordinate
     
     def read_URL_cluster_average(self):
-        with open("C:/Users/admin/Desktop/new/IR Project/results/url_clusterNum_avg.txt", "r") as f:
+        with open(URL_CLUSTER_AVG_FILE, "r", encoding="utf-8") as f:
             while line := f.readline():
                 url, cluster_num = line.strip().split(" ")
                 self.url_clusterNum_average[url] = cluster_num
     
     def read_cluster_center_single(self):
-        with open("C:/Users/admin/Desktop/new/IR Project/results/cluster_center_single.txt", "r") as f:
+        with open(CENTER_SINGLE_FILE, "r", encoding="utf-8") as f:
             while line := f.readline():
                 data = line.strip().split(" ")
                 center = int(data[0])
@@ -58,7 +59,7 @@ class Clustering:
                 self.cluster_center_single[int(center)] = center_coordinate
     
     def read_URL_cluster_single(self):
-        with open("C:/Users/admin/Desktop/new/IR Project/results/url_clusterNum_single.txt", "r") as f:
+        with open(URL_CLUSTER_SINGLE_FILE, "r", encoding="utf-8") as f:
             while line := f.readline():
                 url, cluster_num = line.strip().split(" ")
                 self.url_clusterNum_single[url] = cluster_num
