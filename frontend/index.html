@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Academic IR Search Engine</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Academic Information Retrieval Search Engine</h1>
+    <p class="subtitle">Course project demo: Nutch + Solr + ranking + query expansion + clustering.</p>
+
+    <form id="search-form">
+      <input id="query-input" type="text" placeholder="Enter query..." required />
+      <fieldset>
+        <legend>Search mode</legend>
+        <label><input type="radio" name="type" value="page_rank" checked /> PageRank</label>
+        <label><input type="radio" name="type" value="hits" /> HITS</label>
+        <label><input type="radio" name="type" value="flat_clustering" /> Flat clustering</label>
+        <label><input type="radio" name="type" value="single_hac" /> Single HAC</label>
+        <label><input type="radio" name="type" value="average_hac" /> Average HAC</label>
+        <label><input type="radio" name="type" value="association_qe" /> Association QE</label>
+        <label><input type="radio" name="type" value="metric_qe" /> Metric QE</label>
+        <label><input type="radio" name="type" value="scalar_qe" /> Scalar QE</label>
+      </fieldset>
+      <button type="submit">Search</button>
+    </form>
+
+    <section id="meta"></section>
+    <section id="results" aria-live="polite"></section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
